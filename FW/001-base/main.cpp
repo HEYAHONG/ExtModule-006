@@ -53,6 +53,8 @@ int main()
 {
     SystemInit();
 
+    SDRAMInit();
+
     hruntime_init_lowlevel();
 
     xTaskCreate( hbox_task_entry, "hbox_task",4096/sizeof(StackType_t), NULL, 1, NULL );
