@@ -16,7 +16,7 @@
         <TargetCommonOption>
           <Device>SWM341xE</Device>
           <Vendor>Synwit</Vendor>
-          <PackID>Synwit.SWM32_DFP.2.1.0</PackID>
+          <PackID>Synwit.SWM32_DFP.2.2.7</PackID>
           <PackURL>http://www.synwit.com/pack</PackURL>
           <Cpu>CPUTYPE("Cortex-M33") FPU3(SFPU) DSP CLOCK(12000000) ESEL ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
@@ -186,6 +186,7 @@
             <RvdsVP>1</RvdsVP>
             <RvdsMve>0</RvdsMve>
             <RvdsCdeCp>0</RvdsCdeCp>
+            <nBranchProt>0</nBranchProt>
             <hadIRAM2>0</hadIRAM2>
             <hadIROM2>0</hadIROM2>
             <StupSel>8</StupSel>
