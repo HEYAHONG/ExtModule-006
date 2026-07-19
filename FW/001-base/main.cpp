@@ -48,12 +48,47 @@ static void main_task_entry(void *usr)
     }
 }
 
+/*
+ * 初始化堆(可使用SDRAM作为堆)
+ * 当内存堆足够大时，可运行zlib与lz4解压缩。
+ */
+static void HeapInit(void)
+{
+#if (FREERTOS_KERNEL_MEMMANG_HEAP)==5
+
+#if ((SDRAM_SIZE)==(SDRAM_SIZE_2MB)) || ((SDRAM_SIZE)==(SDRAM_SIZE_8MB)) ||((SDRAM_SIZE)==(SDRAM_SIZE_16MB)) || ((SDRAM_SIZE)==(SDRAM_SIZE_32MB))
+    {
+        uint8_t *       sdram_heap_base=(uint8_t *)(uintptr_t)SDRAMM_BASE;
+        const size_t    sdram_heap_size=SDRAMSize();
+        memset(sdram_heap_base,0,sdram_heap_size); //清空SDRAM的堆区域
+        static const HeapRegion_t xHeapRegions[] =
+        {
+            { (uint8_t *)sdram_heap_base, sdram_heap_size },   // SDRAM
+            { NULL, 0 }                                        // 结束标记
+        };
+        vPortDefineHeapRegions(xHeapRegions);
+    }
+#else
+    {
+        static uint8_t ucHeap[configTOTAL_HEAP_SIZE]= {0};
+        static const HeapRegion_t xHeapRegions[] =
+        {
+            { (uint8_t *)ucHeap, sizeof(ucHeap) },             // SRAM
+            { NULL, 0 }                                        // 结束标记
+        };
+        vPortDefineHeapRegions(xHeapRegions);
+    }
+#endif
+#endif
+}
 
 int main()
 {
     SystemInit();
 
     SDRAMInit();
+
+    HeapInit();
 
     hruntime_init_lowlevel();
 

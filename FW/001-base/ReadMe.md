@@ -10,6 +10,10 @@
 
 配置选项见[sdram.h](sdram.h)。
 
+SDRAM具有以下用途:
+
+- 堆：见[main.cpp](main.cpp)
+
 ## 晶振
 
 主晶振采用12MHz，低速32K晶振采用32.768KHz。

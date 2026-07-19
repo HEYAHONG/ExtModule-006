@@ -5,7 +5,7 @@
  * 启用FreeRTOS内核
  */
 #define FREERTOS_KERNEL              1
-#define FREERTOS_KERNEL_MEMMANG_HEAP 4
+#define FREERTOS_KERNEL_MEMMANG_HEAP 5
 
 /*
  * 不使用原子支持

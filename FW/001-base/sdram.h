@@ -8,6 +8,8 @@ extern "C"
 #endif
 #include "SWM341.h"
 
+#define SDRAM_SIZE_0MB          (-1)
+
 /*
  *  定义SDRAM大小(根据实际芯片型号修改)
  */

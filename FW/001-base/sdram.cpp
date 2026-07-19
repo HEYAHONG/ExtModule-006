@@ -4,6 +4,11 @@
 
 void SDRAMInit(void)
 {
+    if(SDRAMSize() == 0)
+    {
+        return;
+    }
+
     SDRAM_InitStructure SDRAM_InitStruct;
 
     PORT_Init(PORTM, PIN13, PORTM_PIN13_SDR_CLK, 0);
