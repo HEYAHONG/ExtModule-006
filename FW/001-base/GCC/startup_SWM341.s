@@ -3,7 +3,7 @@
     .thumb
 
 
-    .section .isr_vector
+    .section .isr_vector,"a",%progbits
     .align 2
     .globl __isr_vector
 __isr_vector:
