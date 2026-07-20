@@ -552,7 +552,7 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>CSL/Stratup</GroupName>
+          <GroupName>CSL/Startup</GroupName>
           <Files>
             <File>
               <FileName>system_SWM341.c</FileName>
