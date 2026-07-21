@@ -109,12 +109,12 @@ static void  main_init(const hruntime_function_t *func)
 {
 
 }
-HRUNTIME_INIT_EXPORT(main,0xFFFF,main_init,NULL);
+HRUNTIME_INIT_EXPORT(main,HRUNTIME_PRIORITY_8,main_init,NULL);
 
 static void  main_loop(const hruntime_function_t *func)
 {
 
 }
-HRUNTIME_LOOP_EXPORT(main,0xFFFF,main_loop,NULL);
+HRUNTIME_LOOP_EXPORT(main,HRUNTIME_PRIORITY_8,main_loop,NULL);
 
 

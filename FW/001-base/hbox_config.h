@@ -17,6 +17,10 @@
  */
 #define HCPPRT_USE_CTORS 1
 
+/* 
+ * 启用简易优先级
+ */
+#define HRUNTIME_PRIORITY_TINY 1
 
 /*
  * 启用初始化段
